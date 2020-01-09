@@ -1,18 +1,26 @@
 package com.train.web.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.train.manager.model.User;
+import com.train.service.IUserManagement;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("demo")
 public class TestController {
+
+    @Autowired
+    IUserManagement userManagement;
 
     @GetMapping("page")
     public String testPage(){
         return "这是一个springboot页面！";
+    }
+
+
+    @RequestMapping(value = "/user",method = RequestMethod.GET)
+    public String queryUserInfo(){
+        User user = userManagement.queryUserInfo();
+       return user.toString();
     }
 
 }

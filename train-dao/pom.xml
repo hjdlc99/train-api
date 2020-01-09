@@ -17,6 +17,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.train.manager</groupId>
+            <artifactId>train-manager</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
        <!-- <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -28,5 +34,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
         </dependency>-->
+
     </dependencies>
 </project>

@@ -1,2 +1,23 @@
 
 
+
+server:
+  port: 8088
+
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/classsortdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: passw0rd!
+
+
+mybatis:
+  mapper-locations: classpath*:/mybatisMapper/*.xml
+  # classpath*:/mybatisMapper/*.xml
+  type-aliases-package: com.train.manager.model
+  # 开启驼峰uName自动映射到u_name
+  map-underscore-to-camel-case: true
